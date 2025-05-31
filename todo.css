@@ -1,0 +1,138 @@
+:root {
+  --bg: #0F0F10;
+  --card: #1A1A1E;
+  --text-primary: #EDEDED;
+  --text-secondary: #9C9C9C;
+  --border: #2A2A2D;
+  --accent: #7F5AF0;
+  --success: #2CB67D;
+  --hover: rgba(255, 255, 255, 0.05);
+  --shadow: 0px 4px 20px rgba(0,0,0,0.5);
+  --cw: 100px;
+  --c2w: 85px;
+}
+
+
+
+
+body {
+  display: grid;
+  background-color: var(--bg);
+  color:var(--text-primary);
+}
+
+h1, h3 {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 15px;
+  background-color:var(--card);
+  margin: auto;
+  margin-top: 10px;
+}
+
+#card{
+    padding: 2em;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background-color: var(--card);
+    text-align: center;
+}
+.container{
+    display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 15px;
+
+}
+button {
+  justify-content: center;
+  padding: 10px;
+  margin: auto;
+  border-radius: 100px;
+  margin-top: 10px;
+  background-color: slateblue;
+  color: black;
+}
+.New{
+   background-color: darkgreen;
+}
+.Delete{
+       background-color: darkred;
+}
+.topnav {
+    display: grid;
+    background-color: var(--card); /* Dark background */
+    overflow: hidden;      /* Clear floats */
+    padding: 10px;          /* Add some padding */
+    border-radius: 15px;
+    margin: auto;
+    
+    justify-content: center;
+    align-items: center;
+}
+
+.topnav ul {
+    list-style-type: none;  /* Remove bullet points */
+    margin: 0;
+padding: 0px;
+}
+
+/* Style navigation links */
+.topnav li {
+    float: left;            /* Make links horizontal */
+}
+
+.topnav li a {
+    display: block;         /* Make links fill the area */
+    color: var(--text-primary);           /* White text color */
+    text-align: center;     /* Center text */
+    padding: 14px 16px;     /* Add padding around text */
+    text-decoration: none; 
+    gap: 10px; /* Remove underlines */
+}
+
+/* Change link color on hover */
+.topnav li a:hover {
+ color: #ddd;  /* Light gray background on hover */
+         
+    padding: 14px 16px;  
+    background-color: var(--bg);
+    border-radius: 15px;
+    scale: 125%;
+}
+#circle{
+    width: var(--cw);
+  height: var(--cw);
+  background-color: aquamarine;
+  display: grid;
+  justify-self: center;
+  grid-template-columns: repeat(var(--cw)/2, 2);
+  grid-template-rows: repeat(var(--cw)/2, 2);
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  border-radius: 100px;
+}
+#circle2{
+  display: grid;
+  transform:translateY(-17.5px);
+  background-color: var(--bg);
+  width: var(--c2w);
+  height: var(--c2w);
+  align-items: center;
+  justify-content: center;
+  padding: 25px;
+  border-radius: 100px;
+}
+#workTime{
+  padding: 5px;
+  margin: 5px;
+  margin-bottom: 0px;
+  text-align: center;
+}
+#restTime{
+padding: 5px;
+margin: 5px;
+text-align: center;
+}

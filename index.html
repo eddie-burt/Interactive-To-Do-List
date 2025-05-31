@@ -1,16 +1,57 @@
 <!DOCTYPE html>
-<html>
-    <Head>
-        <link rel="stylesheet" href="style.css"> 
-        </Head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity Suite | Your All-in-One Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Additional landing page specific styles */
+       
+    </style>
+</head>
 <body>
-    <h1>To-Do</h1>
-    <button class="New" onclick="newItem()"><b>New Task</b></button> 
-<button class="Delete" onclick="deleteItem()"><B>Finish Task</B></button> 
-<h3>Click the green "New Task" to add an item. <br>Click the red "Finish Task" to complete it.
-</h3>
-<div class="container" id="wrap"></div>
+    <nav class="topnav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="To-Do.html">To-Do List</a></li>
+            <li><a href="reminders.html">Reminders</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <h1>Boost Your Productivity</h1>
+        <p>All-in-one toolkit to organize your tasks, set reminders, and focus with Pomodoro technique</p>
+    </div>
+
+    <div class="features">
+        <div class="feature-card">
+            <h2>📝 Smart To-Do List</h2>
+            <p>Organize your tasks with priorities, due dates, and categories. Never forget what's important.</p>
+            <a href="To-Do.html" class="cta-button">Try To-Do</a>
+        </div>
+        
+        <div class="feature-card">
+            <h2>⏰ Time-Based Reminders</h2>
+            <p>Set reminders that actually work. Get browser notifications when it's time to act.</p>
+            <a href="reminders.html" class="cta-button">Try Reminders</a>
+        </div>
+        
+        <div class="feature-card">
+            <h2>🍅 Pomodoro Timer</h2>
+            <p>Focus in 25-minute bursts with built-in timer. Track your productive sessions.</p>
+            <a href="To-Do.html#pomodoro" class="cta-button">Try Timer</a>
+        </div>
+    </div>
+
+    <div class="cta">
+        <h2>Ready to Supercharge Your Productivity?</h2>
+        <p>Join thousands of users who get more done every day</p>
+        <a href="To-Do.html" class="cta-button">Get Started - It's Free</a>
+    </div>
+
+<footer style="text-align: center; padding: 2rem; color: white; background-color: var(--card); margin-top: 2rem;">
+        <p>© 2023 Productivity Suite | <a href="payment.html" style="color: var(--accent);">Go Premium</a></p>
+    </footer>
 </body>
-        <script src="script.js"></script>
-        <h1><a href="reminders.html">reminders page</a></h1>
 </html>

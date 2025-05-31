@@ -1,3 +1,9 @@
+/* Basic styling for the navigation bar */
+
+
+
+
+
 :root {
   --bg: #0F0F10;
   --card: #1A1A1E;
@@ -12,48 +18,126 @@
 
 
 
-body {
-  display: grid;
-  background-color: var(--bg);
-  color:var(--text-primary);
-}
 
-h1, h3 {
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  border-radius: 15px;
-  background-color:var(--card);
-  margin: auto;
-  margin-top: 10px;
-}
 
-#card{
-    padding: 2em;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    background-color: var(--card);
-    text-align: center;
+
+body{
+    background-color: var(--bg);
 }
-.container{
+.topnav {
     display: grid;
-grid-template-columns: repeat(4, 1fr);
-gap: 15px;
+    background-color: var(--card); /* Dark background */
+    overflow: hidden;      /* Clear floats */
+    padding: 10px;          /* Add some padding */
+    border-radius: 15px;
+    margin: auto;
+    
+    justify-content: center;
+    align-items: center;
+}
 
+.topnav ul {
+    list-style-type: none;  /* Remove bullet points */
+    margin: 0;
+padding: 0px;
 }
-button {
-  justify-content: center;
-  padding: 10px;
-  margin: auto;
-  border-radius: 100px;
-  margin-top: 10px;
-  background-color: slateblue;
-  color: black;
+
+/* Style navigation links */
+.topnav li {
+    float: left;            /* Make links horizontal */
 }
-.New{
-   background-color: darkgreen;
+
+.topnav li a {
+    display: block;         /* Make links fill the area */
+    color: var(--text-primary);           /* White text color */
+    text-align: center;     /* Center text */
+    padding: 14px 16px;     /* Add padding around text */
+    text-decoration: none; 
+    gap: 10px; /* Remove underlines */
 }
-.Delete{
-       background-color: darkred;
+
+/* Change link color on hover */
+.topnav li a:hover {
+ color: #ddd;  /* Light gray background on hover */
+         
+    padding: 14px 16px;  
+    background-color: var(--);
+    border-radius: 15px;
+    scale: 125%;
 }
+h1{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    background-color: var(--card);
+    padding: 10px;
+    border-radius: 15px;
+    margin-left:32.5%;
+    margin-right:32.5%;
+}
+h1:hover{
+     scale: 125%;
+     
+}
+ .hero {
+            text-align: center;
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 800px;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+        
+        .feature-card {
+            background-color: var(--card);
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+        
+        .cta {
+             background-color: var(--accent);
+            color: white;
+            text-align: center;
+            padding: 3rem 1rem;
+            background-color: var(--card);
+            margin: 2rem 0;
+        }
+        
+        .cta-button {
+            background-color: var(--accent);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--success);
+            transform: scale(1.05);
+        }
+        
+        @media (max-width: 768px) {
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }

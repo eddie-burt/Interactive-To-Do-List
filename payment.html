@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Google Sign-In with Stripe</title>
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+  <!-- Google Sign-In Button -->
+  <div id="g_id_onload"
+       data-client_id="YOUR_GOOGLE_CLIENT_ID"
+       data-callback="handleCredentialResponse">
+  </div>
+  <div class="g_id_signin" data-type="standard"></div>
+
+  <!-- Payment Section (hidden until auth) -->
+  <div id="payment-section" style="display:none;">
+    <h2>Subscribe</h2>
+    <button id="checkout-button">$10/month</button>
+  </div>
+
+  <script>
+    const stripe = Stripe('YOUR_STRIPE_PUBLIC_KEY');
+    let userEmail = '';
+
+    function handleCredentialResponse(response) {
+      const user = parseJwt(response.credential);
+      userEmail = user.email;
+      document.getElementById('payment-section').style.display = 'block';
+      
+      // Send token to backend
+      fetch('/auth/google', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token: response.credential })
+      });
+    }
+
+    // Stripe Checkout
+    document.getElementById('checkout-button').addEventListener('click', async () => {
+      const response = await fetch('/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: userEmail })
+      });
+      
+      const session = await response.json();
+      const result = await stripe.redirectToCheckout({ sessionId: session.id });
+      
+      if (result.error) {
+        alert(result.error.message);
+      }
+    });
+
+    function parseJwt(token) {
+      const base64Url = token.split('.')[1];
+      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+      return JSON.parse(atob(base64));
+    }
+  </script>
+</body>
+</html>

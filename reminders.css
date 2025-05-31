@@ -67,3 +67,44 @@ button{
   'GRAD' 0,
   'opsz' 24
 }
+.topnav {
+    display: grid;
+    background-color: var(--card); /* Dark background */
+    overflow: hidden;      /* Clear floats */
+    padding: 10px;          /* Add some padding */
+    border-radius: 15px;
+    margin: auto;
+    
+    justify-content: center;
+    align-items: center;
+}
+
+.topnav ul {
+    list-style-type: none;  /* Remove bullet points */
+    margin: 0;
+padding: 0px;
+}
+
+/* Style navigation links */
+.topnav li {
+    float: left;            /* Make links horizontal */
+}
+
+.topnav li a {
+    display: block;         /* Make links fill the area */
+    color: var(--text-primary);           /* White text color */
+    text-align: center;     /* Center text */
+    padding: 14px 16px;     /* Add padding around text */
+    text-decoration: none; 
+    gap: 10px; /* Remove underlines */
+}
+
+/* Change link color on hover */
+.topnav li a:hover {
+ color: #ddd;  /* Light gray background on hover */
+         
+    padding: 14px 16px;  
+    background-color: var(--bg);
+    border-radius: 15px;
+    scale: 125%;
+}
